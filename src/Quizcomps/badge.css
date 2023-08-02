@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.badgediv{
+   position: absolute;
+    background-color: black;
+    height: 900px;
+    width: 1050px;
+    left: 300px;
+    border-radius: 20px;
+    top: 80px;
+  
+    
+}
+
+.badgebox{
+    position: relative;
+    height: 190px;
+    width: 220px;
+    background-color: rgba(128, 128, 128, 0.043);
+  }
+
+  .hintpos{
+    position: absolute;
+    top:80px;
+    left: 750px;
+    font-size: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    border-radius: 12px;
+  }

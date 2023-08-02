@@ -1,0 +1,420 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+.backgroundloader{
+    position: absolute;
+    top: 0px;
+    left: 470px;
+    height: 900px;
+}
+.counter{
+    position: absolute;
+    left: 890px;
+    top: 370px;
+    font-size: 100px;
+    animation-name: pulse;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+
+    
+}
+
+.rules{
+    background-color: rgba(255, 255, 255, 0.039);
+    position: relative;
+    top: 30px;
+    left: 230px;
+    height:950px ;
+    width: 1300px;
+}
+.menu{
+    position: relative;
+    left: 500px;
+    top: 20px;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.quizpoints{
+    position: absolute;
+    top: 200px;
+    left: 50px;
+}
+.buttonpos{
+    position: absolute;
+    top: 570px;
+    left: 550px;
+    font-size: xx-large;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+ 
+}
+
+
+@keyframes pulse{
+    0%{
+        scale:1
+
+    }
+    50%{
+
+        scale: 1.2;
+    }
+    100%{
+        scale: 1;
+    }
+}
+
+
+.quizdiv{
+    height: 800px;
+    width: 1600px;
+    background-color: rgba(0, 0, 0, 0.366);
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+.option{
+    height:60px;
+    width:600px ;
+    display: flex;
+    justify-content: center;
+    border-radius: 12px;
+    align-items: center;
+}
+.nxtbtn{
+    position: absolute;
+    top: 680px;
+    left: 1200px;
+    background-color: grey;
+    color: white;
+    border-radius: 12px;
+    height:60px;
+    width:250px;
+}
+
+
+
+
+
+
+.leftpos{
+    position: absolute;
+    right: 100px;
+}
+
+
+  
+
+  
+.button{
+    padding: 25px 30px;
+    background-color: rgba(0, 0, 0, 0.611);
+    color: #8b32f0;
+    font-weight:800 ;
+    border: none;
+    border-radius: 5px;
+    font-size: x-large;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor: pointer;
+    position: relative;
+    top: 250px;
+    left: 1150px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .button:hover{
+      background: #8b32f0;
+      color: white;
+      box-shadow: 0 0 5px #8b32f0,
+                  0 0 25px #8b32f0,
+                  0 0 50px #8b32f0,
+                  0 0 200px #8b32f0;
+       -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+  }
+
+  .exitbutton{
+    padding: 25px 30px;
+    background-color: rgba(255, 255, 255, 0.427);
+    color: black;
+    font-weight:800 ;
+    border: none;
+    border-radius: 5px;
+    font-size: x-large;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor: pointer;
+    position: relative;
+    top: 250px;
+    left: 1150px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .exitbutton:hover{
+      background: #04f80c;
+      color: white;
+      box-shadow: 0 0 5px #04f80c,
+                  0 0 25px #04f80c,
+                  0 0 50px #04f80c,
+                  0 0 200px #04f80c;
+       -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+  }
+  
+.optionbg{
+background-color: black;
+}
+
+.optionbg:focus-visible{
+    background-color: #04f80c;
+}
+  
+  .completeddiv{
+    background-color: rgba(243, 243, 243, 0.024);
+    height: 980px;
+    width: 1000px;
+    position: relative;
+    left: 390px;
+    top: 10px;
+    border-radius: 12px;
+  }
+  .congpos{
+    position: relative;
+    left: 370px;
+    top: 25px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+  }
+  .congopos{
+    position: absolute;
+    left: 340px;
+    top: 330px;
+    font-size: 40px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+
+  }
+
+  .coinsearned{
+    height: 250px;
+    width:650px;
+    background-color: rgba(7, 7, 7, 0.753);
+    position: relative;
+    right: 300px;
+    border-radius: 12px;
+    margin-top: 10px;
+  }
+
+  .multiplierpos{
+    position: absolute;
+    left: 550px;
+    top: 105px;
+  }
+
+  .buttondiv{
+    margin-left: 180px;
+   
+    margin-top: 20px;
+  }
+
+
+  .button2{
+
+    background-color: rgba(0, 0, 0, 0.611);
+    color: white;
+    font-weight:800 ;
+    border: none;
+    border-radius: 12px;
+    font-size: x-large;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor: pointer;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-right: 10px;
+  }
+  
+  .button2:hover{
+      background: skyblue;
+      color: black;
+      box-shadow: 0 0 5px skyblue,
+                  0 0 25px skyblue,
+                  0 0 50px skyblue,
+                  0 0 200px skyblue;
+       -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+  }
+
+  .diampos{
+    position: absolute;
+    top: -20px;
+    left: 350px;
+  }
+
+  .button3{
+
+    background-color: black;
+    color: white;
+    font-weight:800 ;
+    border: none;
+    border-radius: 12px;
+    font-size: x-large;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor: pointer;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-right: 50px;
+  }
+  
+  .button3:hover{
+      background: white;
+      color: black;
+      box-shadow: 0 0 5px white,
+                  0 0 25px white,
+                  0 0 50px white,
+                  0 0 200px white;
+       -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+  }
+
+  .tryagain{
+    position: relative;
+    left: 170px;
+    width: 750px;
+    top: -100px;
+  }
+
+  .tries{
+    position: relative;
+    top: -180px;
+    left: 250px;
+    
+  }
+
+  .rescore{
+    position: relative;
+    top: -240px;
+    left: 400px;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  .button4{
+
+    background-color: black;
+    color: white;
+    font-weight:800 ;
+    border: none;
+    border-radius: 12px;
+    font-size: x-large;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 50px;
+    position: absolute;
+    left: 600px;
+    top: 800px;
+    border: 2px solid white;
+  }
+  
+  .button4:hover{
+      background: white;
+      color: black;
+      box-shadow: 0 0 5px skyblue,
+                  0 0 25px skyblue,
+                  0 0 50px skyblue,
+                  0 0 200px skyblue;
+       -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+  }
+
+  .button5{
+
+    background-color: black;
+    color: white;
+    font-weight:800 ;
+    border: none;
+    border-radius: 12px;
+    font-size: x-large;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor: pointer;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-right: 50px;
+    position: absolute;
+    left: 1100px;
+    top: 800px;
+    border: 2px solid white;
+  }
+  
+  .button5:hover{
+      background: white;
+      color: black;
+      box-shadow: 0 0 5px lightsalmon,
+                  0 0 25px lightsalmon,
+                  0 0 50px lightsalmon,
+                  0 0 200px lightsalmon;
+       -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+  }
+
+.maincontainer{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+}
+
+.progress{
+  height: 14px;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  background-color: rgb(170, 34, 244);
+  border-radius: 12px;
+}
+
+.heartdiv{
+  position: relative;
+  top: -260px;
+  left: 580px;
+}
+
+.button6{
+
+  background-color: black;
+  color: white;
+  font-weight:700 ;
+  border: none;
+  border-radius: 7px;
+  overflow: hidden;
+  transition: 0.5s;
+  cursor: pointer;
+  margin-right: 50px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  border: 2px solid rgba(255, 255, 255, 0.133);
+}
+
+.button6:hover{
+    background: white;
+    color: black;
+    box-shadow: 0 0 5px lightsalmon,
+                0 0 25px lightsalmon,
+                0 0 50px lightsalmon,
+                0 0 200px lightsalmon;
+     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+}

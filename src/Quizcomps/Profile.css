@@ -1,0 +1,310 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.main{
+  
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+.overview{
+
+  position: fixed;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  top: 50px;
+  left: 20px;
+ color: rgba(253, 253, 253, 0.659);
+  height: 60px;
+  width: 300px;
+  
+}
+.profile{
+  position: fixed;
+  top: 130px;
+  left: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+  height: 300px;
+  width: 300px;
+  border-radius: 12px;
+  opacity: 0.86;
+  box-shadow: 0 0 10px rgba(46, 45, 45, 0.5);
+}
+
+.points{
+  position: fixed;
+  border-radius: 12px;
+  top: 50px;
+  left: 38%;
+  transform: translateX(-50%);
+  background-color: black;
+  color: white;
+  height: 300px;
+  width: 600px;
+  opacity: 0.86;
+  box-shadow: 0 0 10px rgba(46, 45, 45, 0.5);
+}
+
+.level{
+  position: fixed;
+  top: 360px;
+  right: 18%;
+  background-color: black;
+  height: 300px;
+  width:480px;
+  border-radius: 12px;
+  opacity: 0.86;
+  box-shadow: 0 0 10px rgba(46, 45, 45, 0.5);
+}
+
+.tog{
+  position: fixed;
+  top: 60px;
+  right: 18%;
+  background-color:black;
+  height: 230px;
+  border-radius: 12px;
+  width: 480px;
+  opacity: 0.86;
+  box-shadow: 0 0 10px rgba(46, 45, 45, 0.5);
+
+}
+
+.trophies{
+  position: fixed;
+  top: 440px;
+  left: 20px;
+  background-color: black;
+  height: 350px;
+  width: 300px;
+  border-radius: 12px;
+  opacity: 0.8;
+  box-shadow: 0 0 10px rgba(46, 45, 45, 0.5);
+
+}
+.stats{
+  position: fixed;
+  top: 800px;
+  left: 20px;
+  background-color: black;
+  height: 200px;
+  width: 300px;
+  border-radius: 12px;
+  opacity: 0.8;
+  box-shadow: 0 0 10px rgba(46, 45, 45, 0.5);
+}
+
+.next-quest{
+  position: fixed;
+  border-radius: 12px;
+  top: 380px;
+  left: 38%;
+  transform: translateX(-50%);
+  background-color: black;
+  height: 350px;
+  width: 600px;
+  opacity: 0.8;
+  box-shadow: 0 0 10px rgba(46, 45, 45, 0.5);
+
+}
+.tokens{
+  position: fixed;
+  border-radius: 12px;
+  top: 750px;
+  left: 28%;
+  transform: translateX(-50%);
+  background-color:  black;
+  height: 250px;
+  width: 270px;
+  opacity: 0.8;
+  box-shadow: 0 0 10px rgba(46, 45, 45, 0.5);
+
+}
+
+.energy{
+  position: absolute;
+  border-radius: 12px;
+  top: 750px;
+  left: 47%;
+  transform: translateX(-50%);
+  background-color: black;
+  height: 250px;
+  width: 270px;
+  opacity: 0.8;
+  box-shadow: 0 0 10px rgba(46, 45, 45, 0.5);
+
+}
+.rewards{
+  position: fixed;
+  top: 380px;
+  right: 20%;
+  background-color: black;
+  height: 350px;
+  width:350px;
+  border-radius: 12px;
+  opacity: 0.8;
+  box-shadow: 0 0 10px rgba(46, 45, 45, 0.5);
+}
+
+
+.endorsment{
+  position: fixed;
+  top: 700px;
+  right: 20%;
+  bottom: 10%;
+  background-color: black;
+  height: 300px;
+  width:400px;
+  border-radius: 12px;
+  opacity: 0.86;
+  box-shadow: 0 0 10px rgba(46, 45, 45, 0.5);
+
+}
+.onlinelist{
+  position: relative;
+  top: 10px;
+  right: 0px;
+  left: 1490px;
+  height: 100vh;
+  background-color: black;
+  width: 300px;
+  border-radius: 12px;
+  opacity: 0.86;
+  box-shadow: 0 0 10px rgba(46, 45, 45, 0.5);
+}
+
+.status-circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid white;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  opacity: 0.86;
+}
+
+
+
+.levelalign{
+  position: absolute;
+  left: 218px;
+  top:120px;
+  
+}
+
+.progress-bar2 {
+  height: 12px;
+  border-radius: 30px;
+  background-image: 
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  transition: 0.4s linear;  
+  transition-property: width, background-color;    
+}
+
+.progress-moved .progress-bar2 {
+  width: 85%; 
+  background-color:#8c5c03;  
+  animation: progressAnimation 6s;
+}
+
+@keyframes progressAnimation {
+  0%   { width: 5%; background-color: #bbb508;}
+  100% { width: 85%; background-color: #8c5c03;  }
+}
+
+
+.diamondalign{
+  position: absolute;
+  right: 155px;
+}
+.rubyalign{
+  position: absolute;
+  right: 105px;
+}
+
+.custom-toast {
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Customize the glow color and strength */
+}
+
+.modalbox{
+  height: 600px;
+  width: 570px;
+ position: absolute;
+top: 200px;
+left: 600px;
+border-radius: 12px;
+background-color: rgba(0, 0, 0, 0.639);
+}
+
+.coinalign{
+  position: absolute;
+  left: 400px;
+}
+
+.numberalign{
+  position:absolute;
+  left: 435px;
+  top: 30px;
+  color: rgba(234, 215, 6, 0.873);
+}
+
+.peoplebox{
+  height: 700px;
+  width:550px;
+  background-color: rgba(0, 0, 0, 0.689);
+  border-radius: 12px;
+  
+
+
+}
+.modalboxalign{
+ position: absolute;
+ top:100px;
+ left: 600px;
+}
+
+.pbalign{
+  position: relative;
+  right:335px;
+  top: 100px;
+}
+
+
+.togglebox{
+  height: 800px;
+  width: 460px;
+  background-color: rgba(1, 1, 1, 0.842);
+ border-radius: 20px;
+}
+
+
+.bgbuttondiv{
+  position: relative;
+  top: 0px;
+  width: 130px;
+  border-radius: 300px;
+  left: 150px;
+  top: -30px;
+  
+}
+
+.badgesbox{
+ 
+  height: 130px;
+  width: 130px;
+ 
+}
+
+.popupdiv{
+  position: absolute;
+  height: 200px;
+  width: 470px;
+  border-radius: 15px;
+  background-color: rgb(0, 0, 0);
+  right: 700px;
+  top: 300px;
+}
