@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.mainboard{
+    position: relative;
+    background-color:rgba(0, 0, 0, 0.388);
+    height: 800px;
+    width: 1200px;
+    top: 150px;
+    left: 100px;
+ 
+}
+
+.profileboard{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.639);
+    height: 270px;
+    width: 730px;
+    left: 300px;
+    border-radius: 15px;
+    top: 150px;
+}
+
+.updateboard{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.449);
+    height: 365px;
+    width: 850px;
+    top: 470px;
+    left: -200px;
+    border-radius: 15px;
+}
+
+
+.imgpos{
+    position: relative;
+    left: 150px;
+    top: 14px;
+}
+
+.rank{
+    position: relative;
+    left: 50px;
+    top: 20px;
+}
+
+.name{
+    position: relative;
+    left: 180px;
+    top: 13px;
+    color: rgba(255, 255, 255, 0.829);
+    font-size: 30px;
+    font-weight: 500;
+    font-family: sans-serif;
+}
+
+.point{
+ position: absolute;
+ color: grey;
+
+ left: 620px;
+ font-weight: 500;
+ font-size: 30px;
+ top: 15px;
+}
+.point1{
+ position: absolute;
+ color: #FDD017;
+ left: 620px;
+ font-weight: 500;
+ font-size: 30px;
+ top: 15px;
+}
+.point2{
+ position: absolute;
+ color: silver;
+ left: 620px;
+ font-weight: 500;
+ font-size: 30px;
+ top: 15px;
+}
+.point3{
+ position: absolute;
+ color: #CD7F32;
+ left: 620px;
+ font-weight: 500;
+ font-size: 32px;
+ top: 15px;
+}
+
+.button7{
+
+    background-color: black;
+    color: white;
+    font-weight:700 ;
+    border: none;
+    border-radius: 7px;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor: pointer;
+    margin-right: 50px;
+    position: absolute;
+    right: 280px;
+    top: 900px;
+    border: 2px solid rgba(255, 255, 255, 0.237);
+    border-radius: 12px;
+  }
+  
+  .button7:hover{
+      background: white;
+      color: black;
+      box-shadow: 0 0 5px lightblue,
+                  0 0 25px lightblue,
+                  0 0 50px lightblue,
+                  0 0 200px lightblue;
+       -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+  }
+
+
+.lista{
+    background-color:#fdcf1761 ;
+}
+.listc{
+    background-color:rgba(192, 192, 192, 0.34) ;
+}
+.listd{
+    background-color: #cd803256 ;
+}
+  .listb{
+    background-color: rgba(255, 255, 255, 0.034);
+  }
+
+  .rankb{
+  background-color: rgba(0, 0, 0, 0.327);
+  border-radius: 12px;
+  }
+
+  .upmessage{
+    background-color: rgba(0, 0, 0, 0.311);
+  }
+
+  .leaderpos{
+    position: absolute;
+    left: 300px;
+    top: 10px;
+    font-size: 60px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.478);
+  }
+
+  .boardpos{
+    position: absolute;
+    left: 650px;
+    top: -60px;
+  }
+
+  .namemain{
+    position: relative;
+    left: 180px;
+    top: 13px;
+    color: rgba(255, 255, 255, 0.829);
+    font-size: 32px;
+    font-weight: 500;
+    font-family: sans-serif;
+  }
+
+  .manalign{
+   position: absolute;
+   left: 883px;
+   top: 340px;
+  }
