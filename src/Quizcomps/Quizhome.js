@@ -25,9 +25,14 @@ function Quizhome() {
     const [unlock,setunlock] = useState(false);
     const [showpopup ,setshowpopup] = useState(false);
     const[showbadge ,setshowbadge]= useState(false);
+    const [level,setlevel]=useState(60);
+    const [levelno,setlevelno] = useState(80);
+    const [levelpoints,setlevelpoints] = useState(3);
+    const[showlevelup,setshowlevelup]= useState(false);
+    const[complete,setcomplete]=useState(false);
   return (
     <div>
- <Quizcontext.Provider value={{gamestate,setgamestate,setscore,score,life,setlife,points,setpoints,tokens,settokens,energy,setenergy,unlock,setunlock,showbadge ,setshowbadge,showpopup,setshowpopup}}>
+ <Quizcontext.Provider value={{complete,setcomplete,gamestate,showlevelup,setshowlevelup,setgamestate,setscore,score,life,setlife,points,setpoints,tokens,settokens,energy,setenergy,unlock,setunlock,showbadge ,setshowbadge,showpopup,setshowpopup,level,setlevel,levelno,setlevelno}}>
   {gamestate==="quiz" && <Quiz/>}
   {gamestate==="mainmenu" && <Mainmenu/>}
   {gamestate==="animate" && <Rocketpage/>}

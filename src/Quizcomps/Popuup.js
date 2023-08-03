@@ -5,6 +5,7 @@ import quizmastery from './quizmastery.json';
 import { useContext } from 'react';
 import { Quizcontext } from '../Helpers/Quizcontext';
 import bgglow from './Bgglow.json';
+
 const Popuup = ({visible,handleclose}) => {
     const {setshowpopup} =useContext(Quizcontext);
 
@@ -13,14 +14,18 @@ const[timing,settiming] = useState(5);
 useEffect(()=>{
     const timer = timing > 0 && setInterval(()=>{
       settiming((prev) => prev -1)
-    },1000);
-    return ()=> clearInterval(timer);
+    },7000);
+    console.log(timing);
+
+    return ()=>
+    setshowpopup(false);
+     clearInterval(timer);
   },[timing]);
 
   useEffect(()=>{
     const timer = timing===0 && setTimeout(()=>{
-        handleclose();
-    },3000)
+       setshowpopup(false);
+    },[])
     return ()=>clearInterval(timer);
   },[])
 

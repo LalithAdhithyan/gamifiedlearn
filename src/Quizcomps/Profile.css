@@ -200,21 +200,21 @@
   height: 12px;
   border-radius: 30px;
   background-image: 
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
   transition: 0.4s linear;  
   transition-property: width, background-color;    
 }
 
 .progress-moved .progress-bar2 {
-  width: 85%; 
   background-color:#8c5c03;  
   animation: progressAnimation 6s;
+
 }
 
-@keyframes progressAnimation {
+/* @keyframes progressAnimation {
   0%   { width: 5%; background-color: #bbb508;}
-  100% { width: 85%; background-color: #8c5c03;  }
-}
+  100% { width: 20%; background-color: #8c5c03;  }
+} */
 
 
 .diamondalign{
@@ -224,6 +224,14 @@
 .rubyalign{
   position: absolute;
   right: 105px;
+}
+.diamondalignafter{
+  position: absolute;
+  right: 185px;
+}
+.rubyalignafter{
+  position: absolute;
+  right: 135px;
 }
 
 .custom-toast {
@@ -305,6 +313,85 @@ background-color: rgba(0, 0, 0, 0.639);
   width: 470px;
   border-radius: 15px;
   background-color: rgb(0, 0, 0);
-  right: 700px;
-  top: 300px;
+  right: 50px;
+  top: 20px;
+}
+
+.newleveldiv{
+  background-color: rgba(0, 0, 0, 0.731);
+  position: absolute;
+  height: 500px;
+  width: 1000px;
+  left: 400px;
+  top: 250px;
+  border-radius: 12px;
+ 
+  
+}
+
+.leveltextp{
+  background: linear-gradient(to top, rgb(222, 82, 18), rgb(210, 228, 7));
+  -webkit-background-clip: text; 
+  background-clip: text;
+  color: transparent;
+  position: absolute;
+  top:180px;
+  left: 472px;
+}
+
+.confpos{
+  position: absolute;
+  top: -30px;
+  height: 500px;
+  left: 270px;
+  font-size: 30px;
+}
+
+.newl{
+  background: linear-gradient(to top, rgba(60, 61, 57, 0.808), rgba(254, 254, 251, 0.947));
+  -webkit-background-clip: text; 
+  background-clip: text;
+  color: transparent;
+  position: absolute;
+  top:180px;
+  left: 240px;
+  font-size: 30px;
+  font-weight: 600;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.crewarddiv{
+  position: absolute;
+  bottom: 90px;
+  left: 420px;
+}
+
+
+.button8{
+
+  background-color: rgba(255, 255, 255, 0.108);
+  color: rgba(255, 255, 255, 0.585);
+  font-weight:400 ;
+  border: 1 solid grey;
+  border-radius: 12px;
+  font-size: x-large;
+  overflow: hidden;
+  transition: 0.5s;
+  cursor: pointer;
+ 
+  margin-right: 50px;
+  position: absolute;
+  left: 418px;
+  top: 430px;
+ 
+}
+
+.button8:hover{
+    background: rgb(223, 220, 220);
+    color: black;
+    box-shadow: 0 0 5px lightslategray,
+                0 0 25px lightslategray,
+                0 0 50px lightslategray,
+                0 0 200px lightslategray;
+     -webkit-box-reflect:below 1px linear-gradient(transparent, rgba(94, 14, 14, 0.333));
 }

@@ -8,11 +8,17 @@ import { Question } from '../Helpers/questions';
 import confetti from './confettianim.json';
 
 const Newendscreen = () => {
-    const {score ,setscore,setgamestate,setshowpopup,setunlock} = useContext(Quizcontext);
+    const {score ,setscore,setgamestate,setshowpopup,setunlock,level,setlevel,levelno,setlevelno,setshowlevelup} = useContext(Quizcontext);
      const handletoast=()=>{
    setshowpopup(true);
    setgamestate("profile")
    setunlock(true);
+
+   if(level===100){
+    setlevel(0);
+    setlevelno(levelno+1)
+    setshowlevelup(true);
+   }
      }
 
     return (

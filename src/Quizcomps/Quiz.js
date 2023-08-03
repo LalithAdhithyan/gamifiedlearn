@@ -10,7 +10,7 @@ import bga from './ bgmation.json';
 
 const Quiz = () => {
 
-  const{score,setscore,setgamestate,life,setlife,points,setpoints,settokens,tokens,energy ,setenergy,setunlock} = useContext(Quizcontext);
+  const{score,setscore,setgamestate,life,setlife,points,setpoints,settokens,tokens,energy ,setenergy,setlevel,setunlock} = useContext(Quizcontext);
   const [ curques,setcurques] = useState(0);
   const[optionchose,setoptionchosen] = useState("");
   const[timeremaining,settimeremaining] = useState(10);
@@ -96,13 +96,20 @@ const finishquiz=()=>{
      setenergy(energy+5)
     }
 
+    setlevel((oldLevel) => (oldLevel+40))
     
-    
-   
+
+
+     
 setprogress(progress+20);
  setTimeout(()=>{
   setlife(life-1);
   setgamestate("decision");
+  setunlock(true);
+  
+
+
+
   
 },1030)
 
