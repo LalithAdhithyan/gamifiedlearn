@@ -27,19 +27,13 @@ import Coinmodal from './Coinmodal';
 import Peoplemodal from './Peoplemodal';
 import { AnimatePresence, motion } from 'framer-motion';
 import Lottie from 'lottie-react';
-import animation from './animation.json';
 import Badges from './Badges';
-import click from './images/icons8-menu-50.png';
-import butbg from './buttonbg.json';
+import Newlevel from './Newlevel';
 import ldboard from './leaderboardanim.json';
-import Leaderboard from './Leaderboard';
 import badge1 from './badge1.json';
 import badge2 from './badge2.json'
-import badge3 from './badge3.json';
 import badge4 from './badge4.json';
 import badge5 from './badges5.json'
-import badge6 from './badge6.json'
-import unlock from './unlock.json'
 import leveljs from './level.json'
 import Popuup from './Popuup';
 
@@ -61,8 +55,8 @@ const Profile=()=> {
   const [showmodal ,setshowmodal] = useState(false);
   const [showpmodel,setshowpmodal] = useState(false);
   const [open,setisopen] = useState(false);
-
-  const {setgamestate,points,setpoints,tokens,settokens,energy,setenergy,unlock,setunlock,showbadge,setshowbadge,showpopup,setshowpopup} = useContext(Quizcontext);
+ const[disabled ,setdisabled] = useState(false);
+  const {setgamestate,points,setpoints,unlock,tokens,settokens,showlevelup,energy,levelno,showbadge,setshowbadge,showpopup,setshowpopup,level} = useContext(Quizcontext);
  
 let toastunlocked = false;
 
@@ -71,6 +65,12 @@ let toastunlocked = false;
     setshowpmodal(false);
     setshowbadge(false);
     setshowpopup(false);
+  }
+
+  const handletaskrewards=()=>{
+    setpoints(points+10);
+    setdisabled(true);
+    
   }
 
 
@@ -170,6 +170,8 @@ const particlesLoaded = useCallback(async container => {
 <Peoplemodal show={showpmodel} handleclose = {handleclose}/>
 
 </AnimatePresence>
+
+<Newlevel show={showlevelup} handleclose = {handleclose}/>
 
 <div className='overview flex justify-center align-middle text-5xl '>
   <h1>Overview</h1>
@@ -344,7 +346,7 @@ const particlesLoaded = useCallback(async container => {
   <div className=''>
   <img src = {diamond} alt = "diam"className='w-30 h-20 fixed left-3 top-12 animate-pulse '></img>
   <p className='fixed text-slate-500 top-16 left-32 font-bold text-6xl animate-pulse'>{points}</p>
-  <button className= 'absolute top-1/4 left-2/4 border-2 border-slate-700 rounded text-slate-600 p-1'>How to earn more points?</button>
+  <button className= 'absolute top-1/4 left-2/4 border-2 border-slate-700 rounded px-6 text-slate-600 p-1'>How to earn more points?</button>
   </div>
 
 
@@ -376,9 +378,23 @@ const particlesLoaded = useCallback(async container => {
   <BsFillCaretRightFill  className='font-bold text-xl text-sky-300 mr-4' /><p className='text-l  text-slate-400 '> Lessons on calorimetry</p> <img src={diamond} alt='diam' className='w-5 h-5  absolute right-44'></img> <h3 className='text-slate-400 diamondalign'>10</h3><img src={ruby} alt='ruby' className='w-5 h-5  absolute right-32'></img>
   <h3 className='text-slate-400 rubyalign'>20</h3>
     </li>
+
+{unlock===true ?
+    <div className='flex flex-row'>
     <li className='flex flex-row mb-7 '>
-  <BsFillCaretRightFill  className='font-bold text-xl text-sky-300 mr-4' /><p className='text-l text-slate-400 cursor-pointer' onClick={()=>setgamestate("startquiz")}>  Quiz on Thermodynamics</p><img src={diamond} alt='diam' className='w-5 h-5  absolute right-44'></img><h3 className='text-slate-400 diamondalign'>10</h3><img src={ruby} alt='ruby' className='w-5 h-5 absolute right-32'></img> <h3 className='text-slate-400 rubyalign'>20</h3>
+  <BsFillCaretRightFill  className='font-bold text-xl text-sky-300 mr-4' /><button  className='text-slate-400 cursor-pointer line-through'  onClick={()=>setgamestate("startquiz")}>  Quiz on Thermodynamics  </button><span className='text-green-300 relative left-4'>Completed</span><img src={diamond} alt='diam' className='w-5 h-5  absolute right-52'></img><h3 className='text-slate-400 diamondalignafter'>10</h3><img src={ruby} alt='ruby' className='w-5 h-5 absolute right-40'></img> <h3 className='text-slate-400 rubyalignafter'>20</h3>
+  <button onClick={handletaskrewards} disabled={disabled} className='text-slate-300 relative left-48 border-1 hover:bg-slate-50 px-3  rounded-lg hover:text-black border-sky-200'>Collect</button>
     </li>
+    <button className='absolute'></button>
+    </div>:
+ <div>
+    <li className='flex flex-row mb-7 '>
+  <BsFillCaretRightFill  className='font-bold text-xl text-sky-300 mr-4' /><p className='text-l text-slate-400 cursor-pointer'  onClick={()=>setgamestate("startquiz")}>  Quiz on Thermodynamics</p><img src={diamond} alt='diam' className='w-5 h-5  absolute right-44'></img><h3 className='text-slate-400 diamondalign'>10</h3><img src={ruby} alt='ruby' className='w-5 h-5 absolute right-32'></img> <h3 className='text-slate-400 rubyalign'>20</h3>
+    </li>
+    </div>
+}
+
+
     <li className='flex flex-row mb-7 '>
   <BsFillCaretRightFill  className='font-bold text-xl text-sky-300 mr-4' /><p className='text-l  text-slate-400 '>  Assigment on isochoric process</p><img src={diamond} alt='diam' className='w-5 h-5 absolute right-44'></img><h3 className='text-slate-400 diamondalign'>10</h3>
     </li>
@@ -462,13 +478,13 @@ const particlesLoaded = useCallback(async container => {
    </div>
    <Lottie animationData={leveljs} className='h-60 w-60 absolute left-32 top-6'/>
   
-   <h1 className=' levelalign text-slate-400 text-5xl font-semibold'>80</h1>
-   <div>
-   <div class="progress2 progress-moved relative top-12 ">
-    <div class="progress-bar2 absolute top-44 left-7" >
-</div>                       
+   <h1 className=' levelalign text-slate-400 text-5xl font-semibold'>{levelno}</h1>
+    <div>
+    <div class="progress2 progress-moved relative top-12 " >
+    <div class="progress-bar2 absolute top-44 left-0"style={{width:`${level}%`}} >
+    </div>                       
 </div> 
-  <div className=' absolute top-56 left-7 text-slate-500'>3 points for next level </div><span className='text-slate-300 absolute top-56 left-96'>97%</span>
+  <div className=' absolute top-56 left-7 text-slate-500'>3 points for next level </div><span className='text-slate-300 absolute top-56 left-96'>{level}%</span>
    </div>
    </div>
 
@@ -617,6 +633,7 @@ const particlesLoaded = useCallback(async container => {
          <motion.button whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.7 }}
       transition={{ type: "spring", stiffness: 400, damping: 17 }}  onClick={notify} className=' hover:border-sky-600 hover:bg-sky-400  absolute  top-6 left-16 border-2 border-sky-900 rounded-lg px-3 opacity-90 text-slate-100 bg-sky-600 mt-1'>send invite</motion.button>
+        
          <Toaster position='top-right' reverseOrder={false} toastOptions={{
         
           style:{
