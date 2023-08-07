@@ -12,15 +12,7 @@ import level from './images/level badge.png'
 import trophy from './images/trophy.png';
 import man from './images/Man.png';
 import poker from './images/game.png';
-import prof1 from './images/otaku.png';
-import prof2 from './images/otaku (1).png';
-import prof3 from './images/otaku3.png';
-import prof4 from './images/otaku4.png';
-import prof5 from './images/otaku5.png';
-import prof6 from './images/otaku6.png';
-import prof7 from './images/otaku7.png';
-import { AiOutlineUser } from "react-icons/ai";
-import { FaRegSun ,FaBan } from "react-icons/fa";
+import { BiCircle ,BiBox } from "react-icons/bi";
 import { BsFillCaretRightFill ,BsFillCaretLeftFill, BsInputCursorText , BsFillEnvelopeFill, BsHourglassBottom,BsList } from "react-icons/bs";
 import { toast ,Toaster } from 'react-hot-toast';
 import Coinmodal from './Coinmodal';
@@ -30,13 +22,15 @@ import Lottie from 'lottie-react';
 import Badges from './Badges';
 import Newlevel from './Newlevel';
 import ldboard from './leaderboardanim.json';
-import badge1 from './badge1.json';
 import badge2 from './badge2.json'
 import badge4 from './badge4.json';
 import badge5 from './badges5.json'
 import leveljs from './level.json'
 import Popuup from './Popuup';
-
+import firststreakanim from './streak1anim.json';
+import timeranim from './Timer.json'
+import streakanim2 from './streakanim2.json'
+import LearningStreak from './LearningStreak';
 
 
 
@@ -159,6 +153,8 @@ const particlesLoaded = useCallback(async container => {
   </motion.div>
 
 </div>
+
+{/* <LearningStreak/> */}
 <AnimatePresence>
 
 <Coinmodal visible={showmodal} handleclose = {handleclose} />
@@ -312,7 +308,14 @@ const particlesLoaded = useCallback(async container => {
 
 
   <div className='trophies '>
- <span className='text-slate-400 flex justify-center text-xl top-3 absolute left-20'>
+    <div className='flex flex-col justify-center items-center'>
+      <h3 className='text-2xl text-slate-400 tracking-wider relative top-2 font-medium'>Learning Streaks</h3>
+      <Lottie animationData={firststreakanim} loop={true} className='relative top-6'/>
+      <Lottie animationData={streakanim2} loop={true} className='relative -top-11' />
+      <button className='button10 relative -top-20 px-10'>View Streak</button>
+
+    </div>
+ {/* <span className='text-slate-400 flex justify-center text-xl top-3 absolute left-20'>
   Recent Trophies
 
  </span>
@@ -330,7 +333,8 @@ const particlesLoaded = useCallback(async container => {
   <img src={lightning} className='h-5 w-5 top-20 left-36 relative'/>
   <p className='text-white relative top-20 left-40'>1</p> 
    </section>
-   </div>
+   </div> */}
+ 
 
   </div>
 
@@ -399,7 +403,7 @@ const particlesLoaded = useCallback(async container => {
   <BsFillCaretRightFill  className='font-bold text-xl text-sky-300 mr-4' /><p className='text-l  text-slate-400 '>  Assigment on isochoric process</p><img src={diamond} alt='diam' className='w-5 h-5 absolute right-44'></img><h3 className='text-slate-400 diamondalign'>10</h3>
     </li>
     <li className='flex flex-row mb-7 '>
-  <BsFillCaretRightFill  className='font-bold text-xl text-sky-300 mr-4' /><p className='text-l  text-slate-400 '>  Assesment on spontaniety</p><img src={diamond} alt='diam' className='w-5 h-5  absolute right-44'></img><h3 className='text-slate-400 diamondalign'>10</h3>
+  <BsFillCaretRightFill  className='font-bold text-xl text-sky-300 mr-4' /><p className='text-l  text-slate-400 '>  Quiz on java</p><button className='text-yellow-500 left-96 tracking-widest px-10 tlealign'>TLE</button>
     </li>
     <li className='flex flex-row mb-7 '>
   <BsFillCaretRightFill  className='font-bold text-xl text-sky-300 mr-4' /><p className='text-l  text-slate-400 '>  Lesson on gibs energy change</p><img src={diamond} alt='diam' className='w-5 h-5 absolute right-44'></img><h3 className='text-slate-400 diamondalign'>10</h3><img src={ruby} alt='ruby' className='w-5 h-5 absolute right-32'></img>  <h3 className='text-slate-400 rubyalign'>20</h3>
@@ -476,7 +480,7 @@ const particlesLoaded = useCallback(async container => {
    <div className=' flex justify-center'>
     <h3 className ='text-3xl font-serif text-slate-300 tracking-wider'>My Level</h3>
    </div>
-   <Lottie animationData={leveljs} className='h-60 w-60 absolute left-32 top-6'/>
+   <Lottie animationData={leveljs} className='h-60 w-60 absolute left-12 top-6'/>
   
    <h1 className=' levelalign text-slate-400 text-5xl font-semibold'>{levelno}</h1>
     <div>
@@ -484,7 +488,7 @@ const particlesLoaded = useCallback(async container => {
     <div class="progress-bar2 absolute top-44 left-0"style={{width:`${level}%`}} >
     </div>                       
 </div> 
-  <div className=' absolute top-56 left-7 text-slate-500'>3 points for next level </div><span className='text-slate-300 absolute top-56 left-96'>{level}%</span>
+  <div className=' absolute top-56 left-7 text-slate-500'>3 points for next level </div><span className='text-slate-300 absolute top-56 left-72'>{level}%</span>
    </div>
    </div>
 
@@ -520,7 +524,48 @@ const particlesLoaded = useCallback(async container => {
 
 
   <div className='onlinelist relative'>
-    <div>
+
+  <div className='relative timeevents'>
+    <div className='flex flex-col justify-center items-center'>
+<h3 className='text-2xl text-yellow-400 relative top-3 font-semibold'>Time limited Event!!</h3>
+<Lottie animationData={timeranim} className='relative top-4' />
+<h3 className='relative text-slate-300 text-xl top-4'>Time Left :<span className='text-xl text-red-400 '>24:20:18</span></h3>
+<h3 className='text-xl text-slate-300 relative font-medium top-10'>Complete the quiz on java </h3>
+<h3 className='text-xl text-slate-300 relative font-medium top-10'>and earn<span className='text-red-500 ml-2  text-2xl relative font-semi-bold'>Extra </span> points !!! </h3>
+<div className='flex flex-row justify-start items-start '>
+<img src={diamond} className='h-7 w-7 relative top-16 -left-5'/>
+<h3 className='text-slate-300 relative top-16 -left-4 text-xl font-semibold '>X 50</h3>
+<img src={coin} className='h-7 w-7 relative top-16 left-1'/>
+<h3 className='text-slate-300 relative top-16 left-2 text-xl font-semibold '>X 50</h3>
+<img src={lightning} className='h-7 w-7 relative top-16 left-5'/>
+<h3 className='text-slate-300 relative top-16 left-4 text-xl font-semibold '>X 50</h3>
+
+</div>
+<button className='button9 relative top-24 px-14 py-0.5 left-6'>Take Quiz</button>
+  </div>
+</div>
+
+<div className='updates flex flex-col justify-start items-center'>
+  <h3 className='text-slate-300 relative text-2xl top-5 font-medium tracking-widest'>Updates & Events</h3>
+  <h3 className='relative text-slate-500 top-9 -left-24 text-xl tracking-widest font-light mb-5'>Current</h3>
+  <div className='flex flex-col top-10 relative'>
+  <BiCircle className='absolute -left-5 top-1 mr-1 text-green-100'/> <h3  className='text-slate-300 '>lecture on Data science<button className='ml-2 text-green-400 mb-2'>Join now</button></h3>
+  <BiCircle className='absolute -left-5 top-9 mr-1 text-green-100'/> <h3  className='text-slate-300 '>lecture on DSA<button className='ml-2 text-green-400 mb-2'>Join now</button></h3>
+</div>
+<h3 className='relative text-slate-500 top-16 -left-20 text-xl tracking-widest font-light mb-8'>Upcoming</h3>
+<div className='flex flex-col relative top-6 left-20'>
+<BiBox className='text-yellow-300 relative text-xl top-8 mb-2 -left-32'/><h3 className=' text-slate-300 -left-24 relative '>lecture on Spring</h3>
+<BiBox className='text-yellow-300 relative text-xl top-8 mb-2 -left-32'/><h3 className=' text-slate-300 -left-24 relative '>lecture on Spring MVC</h3>
+<BiBox className='text-yellow-300 relative text-xl top-8 mb-2 -left-32'/><h3 className=' text-slate-300 -left-24 relative '>lecture on Mongo DB</h3>
+<BiBox className='text-yellow-300 relative text-xl top-8 mb-2 -left-32'/><h3 className=' text-slate-300 -left-24 relative '>summercamp event </h3>
+</div>
+
+
+</div>
+
+
+
+    {/* <div>
     <input placeholder='search' className=' pl-11 pr-9  relative left-16 top-6 w-2/3 bg-sky-400 opacity-50  rounded-lg placeholder:text-white placeholder:text-center  '></input>
    </div>
     
@@ -649,12 +694,8 @@ const particlesLoaded = useCallback(async container => {
         </div>
 </ul>
 
-  </div>
-  <div className='text-slate-300 relative h-14 w-4/4 top-48 flex flex-row items-end left-16'>
+  </div> */}
 
-
-    
-  </div>
   </div>
  
 

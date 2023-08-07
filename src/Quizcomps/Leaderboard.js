@@ -96,7 +96,7 @@ const Leaderboarddata=[
 
   return (
     <div className='h-screen bg-black flex flex-row z-40 '>
-    <Lottie animationData={backbg} loop={true}  className='absolute '/>
+    <Lottie animationData={backbg} loop={true}  className='absolute -z-0 '/>
     <img src={man} className='absolute rounded-full h-7 manalign'/>
     <div className='flex flex-row absolute left-96  top-10'>
     <h3 className=' leaderpos '>Leaderboards </h3>
