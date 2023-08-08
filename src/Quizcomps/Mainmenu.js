@@ -7,7 +7,7 @@ import background from './Background.json';
 import Lottie from 'lottie-react';
 
 const Mainmenu = () => {
-  const{gamestate,setgamestate} = useContext(Quizcontext);
+  const{gamestate,setgamestate,newgamestate,setnewgamestate} = useContext(Quizcontext);
   const[count,setcount] = useState(3);
 
   useEffect(()=>{

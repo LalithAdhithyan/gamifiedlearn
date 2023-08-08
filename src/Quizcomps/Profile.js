@@ -19,6 +19,7 @@ import prof4 from './images/otaku4.png';
 import prof5 from './images/otaku5.png';
 import prof6 from './images/otaku6.png';
 import prof7 from './images/otaku7.png';
+import gift from './images/gift.png';
 import { AiOutlineUser } from "react-icons/ai";
 import { FaRegSun ,FaBan } from "react-icons/fa";
 import { BsFillCaretRightFill ,BsFillCaretLeftFill, BsInputCursorText , BsFillEnvelopeFill, BsHourglassBottom,BsList } from "react-icons/bs";
@@ -42,6 +43,8 @@ import badge6 from './badge6.json'
 import unlock from './unlock.json'
 import leveljs from './level.json'
 import Popuup from './Popuup';
+import Point from './Point';
+
 
 
 
@@ -61,6 +64,8 @@ const Profile=()=> {
   const [showmodal ,setshowmodal] = useState(false);
   const [showpmodel,setshowpmodal] = useState(false);
   const [open,setisopen] = useState(false);
+  const [point,setshowpoints] = useState(false);
+
 
   const {setgamestate,points,setpoints,tokens,settokens,energy,setenergy,unlock,setunlock,showbadge,setshowbadge,showpopup,setshowpopup} = useContext(Quizcontext);
  
@@ -71,6 +76,8 @@ let toastunlocked = false;
     setshowpmodal(false);
     setshowbadge(false);
     setshowpopup(false);
+    setshowpoints(false);
+   
   }
 
 
@@ -81,12 +88,13 @@ let toastunlocked = false;
    
     
     
-  }
+  }  
   const particlesInit = useCallback(async engine => {
     console.log(engine);
   
     await loadSlim(engine);
 }, []);
+
 
 const particlesLoaded = useCallback(async container => {
     await console.log(container);
@@ -94,13 +102,16 @@ const particlesLoaded = useCallback(async container => {
 
 
 
+
+
   return (
   
     
-    
+ 
 <div className='main bg-gradient-to-r from-black to-slate-800 ... mb-5 '>
 
   <Popuup visible={showpopup}  handleclose={handleclose}/>
+  
 
 <div className='card'>
 
@@ -170,6 +181,11 @@ const particlesLoaded = useCallback(async container => {
 <Peoplemodal show={showpmodel} handleclose = {handleclose}/>
 
 </AnimatePresence>
+<AnimatePresence>
+
+<Point visible={point} handleclose = {handleclose} />
+
+</AnimatePresence>
 
 <div className='overview flex justify-center align-middle text-5xl '>
   <h1>Overview</h1>
@@ -180,8 +196,24 @@ const particlesLoaded = useCallback(async container => {
    <div className='text-sky-10 flex bg-slate-900 flex-row rounded-lg w-36'>
     <img src={poker} alt='activity' className='h-7 w-9 opacity-95'/>
     <h1 className='rounded-lg text-slate-200 '> Activity </h1>
-   <h3 className='bg-slate-400 rounded-xl mx-3 px-2 absolute right-0 top-0.5 text-white'>35</h3>
+   <h3 className='bg-slate-400 rounded-xl mx-3 px-2 absolute right-12 top-0.5 text-white'></h3>
   </div>
+  
+
+  <div className='gift'>
+  <div className='flex flex-col' >
+  <div className='text-sky-10 flex bg-slate-900 flex-row rounded-lg w-36'>
+    <img src={gift} alt='activity' className='h-7 w-9 opacity-95'/>
+    {/* <h1 className='rounded-lg text-slate-200 '> Daily Rewards </h1>  */}
+       <motion.button whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.7 }}
+      transition={{ type: "spring", stiffness: 400, damping: 17 }} onClick={()=>setshowpoints(true)} className='border-black rounded-2xl p-1.1 bg-slate-900 text-white'>Daily Rewards</motion.button> 
+ 
+  </div>
+  </div>
+  </div>
+ 
+
 </section>
 
 <section className='flex flex-row fixed  right-0'>
@@ -200,6 +232,8 @@ const particlesLoaded = useCallback(async container => {
 <img src={diamond} alt='image' className='h-5 w-5 mr-1 '/>  
 <h1 className='relative -top-0.5 text-white'>{points}</h1>
 </div>
+
+
 
 
 
@@ -377,7 +411,7 @@ const particlesLoaded = useCallback(async container => {
   <h3 className='text-slate-400 rubyalign'>20</h3>
     </li>
     <li className='flex flex-row mb-7 '>
-  <BsFillCaretRightFill  className='font-bold text-xl text-sky-300 mr-4' /><p className='text-l text-slate-400 cursor-pointer' onClick={()=>setgamestate("startquiz")}>  Quiz on Thermodynamics</p><img src={diamond} alt='diam' className='w-5 h-5  absolute right-44'></img><h3 className='text-slate-400 diamondalign'>10</h3><img src={ruby} alt='ruby' className='w-5 h-5 absolute right-32'></img> <h3 className='text-slate-400 rubyalign'>20</h3>
+  <BsFillCaretRightFill  className='font-bold text-xl text-sky-300 mr-4' /><p className='text-l text-slate-400 cursor-pointer' onClick={()=>setgamestate("Startquiz")}>  Quiz on Thermodynamics</p><img src={diamond} alt='diam' className='w-5 h-5  absolute right-44'></img><h3 className='text-slate-400 diamondalign'>10</h3><img src={ruby} alt='ruby' className='w-5 h-5 absolute right-32'></img> <h3 className='text-slate-400 rubyalign'>20</h3>
     </li>
     <li className='flex flex-row mb-7 '>
   <BsFillCaretRightFill  className='font-bold text-xl text-sky-300 mr-4' /><p className='text-l  text-slate-400 '>  Assigment on isochoric process</p><img src={diamond} alt='diam' className='w-5 h-5 absolute right-44'></img><h3 className='text-slate-400 diamondalign'>10</h3>
@@ -433,8 +467,8 @@ const particlesLoaded = useCallback(async container => {
   </AnimatePresence>
   <div className='tog'>
     
-    <h3 className='absolute text-2xl font-light left-36 tracking-wide text-slate-400 top-2'>Recent Badges</h3>
- <div className='flex flex-col left-5 top-11 relative'>
+    <h3 className='absolute text-2xl font-light left-40 tracking-wide text-slate-400 top-2'>Recent Badges</h3>
+ <div className='flex flex-col left-10 top-11 relative'>
 <div className='flex flex-row'>
   <div className='badgesbox mr-4 flex flex-col relative'>
    <Lottie animationData={badge5} loop={true}/>
