@@ -418,3 +418,17 @@ background-color: black;
                 0 0 200px lightsalmon;
      -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
 }
+
+
+.jbuttonpos{
+  position: absolute;
+    top: 625px;
+    left: 550px;
+    font-size: xx-large;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+  
+
+}
+

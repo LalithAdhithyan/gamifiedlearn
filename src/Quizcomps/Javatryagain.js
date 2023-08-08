@@ -6,11 +6,11 @@ import Lottie from 'lottie-react';
 import tryagain from './Tryagainanim.json';
 import { Question } from '../Helpers/questions';
 import heart from './heartanim.json'
-const Newtryagain = () => {
+const Javatryagain = () => {
  
     const {score ,setgamestate ,setscore, life} = useContext(Quizcontext);
 const handletryagain=()=>{
-  setgamestate('startquiz');
+  setgamestate('Javastartquiz');
   setscore(0);
 }
  
@@ -33,7 +33,7 @@ const handletryagain=()=>{
 
 <div className='flex flex-row'>
     <button onClick={handletryagain} className='button4 px-8'>Try Again</button>
-    <button onClick={()=>{setgamestate("newendscreen")}} className=' button5 px-8 py-5'>Get Results</button>
+    <button onClick={()=>{setgamestate("Javaendscreen")}} className=' button5 px-8 py-5'>Get Results</button>
 
 </div>
       </div>
@@ -41,4 +41,4 @@ const handletryagain=()=>{
   )
 }
 
-export default Newtryagain
+export default Javatryagain;

@@ -10,6 +10,14 @@ import Newtryagain from './Newtryagain';
 import Newendscreen from './Newendscreen';
 import Profile from './Profile';
 import Leaderboard from './Leaderboard';
+import Javastartquiz from './Javastartquiz';
+import Javaquiz from './Javaquiz';
+import Javamenu from './Javamenu';
+import Javarpage from './Javarpage';
+import Javatryagain from './Javatryagain';
+import Javadecision from './Javadecision';
+import Javaendscreen from './Javaendscreen';
+
 
 
 
@@ -28,11 +36,12 @@ function Quizhome() {
     const [level,setlevel]=useState(60);
     const [levelno,setlevelno] = useState(80);
     const [levelpoints,setlevelpoints] = useState(3);
+    const [timeevent,settimeevent] = useState(false);
     const[showlevelup,setshowlevelup]= useState(false);
     const[complete,setcomplete]=useState(false);
   return (
     <div>
- <Quizcontext.Provider value={{complete,setcomplete,gamestate,showlevelup,setshowlevelup,setgamestate,setscore,score,life,setlife,points,setpoints,tokens,settokens,energy,setenergy,unlock,setunlock,showbadge ,setshowbadge,showpopup,setshowpopup,level,setlevel,levelno,setlevelno}}>
+ <Quizcontext.Provider value={{complete,setcomplete,settimeevent,timeevent,gamestate,showlevelup,setshowlevelup,setgamestate,setscore,score,life,setlife,points,setpoints,tokens,settokens,energy,setenergy,unlock,setunlock,showbadge ,setshowbadge,showpopup,setshowpopup,level,setlevel,levelno,setlevelno}}>
   {gamestate==="quiz" && <Quiz/>}
   {gamestate==="mainmenu" && <Mainmenu/>}
   {gamestate==="animate" && <Rocketpage/>}
@@ -42,6 +51,15 @@ function Quizhome() {
   {gamestate=== "newendscreen"&&<Newendscreen/>}
   {gamestate==="profile"&&<Profile/>}
   {gamestate==="leaderboard"&&<Leaderboard/>}
+  {gamestate==="Javastartquiz"&&<Javastartquiz/>}
+  {gamestate==="Javaendscreen"&&<Javaendscreen/>}
+  {gamestate==="Javaquiz"&&<Javaquiz/>}
+  {gamestate==="Javamenu"&&<Javamenu/>}
+  {gamestate==="Javarpage"&&<Javarpage/>}
+  {gamestate==="Javatryagain"&&<Javatryagain/>}
+  {gamestate==="Javadecision"&&<Javadecision/>}
+  
+
   </Quizcontext.Provider>
     </div>
   )

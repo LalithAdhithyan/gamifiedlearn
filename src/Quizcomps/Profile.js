@@ -8,8 +8,7 @@ import { useCallback, useState,useRef,useEffect,useContext } from "react";
 import { Quizcontext } from '../Helpers/Quizcontext';
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
-import level from './images/level badge.png'
-import trophy from './images/trophy.png';
+import LearningStreak from './LearningStreak';
 import man from './images/Man.png';
 import poker from './images/game.png';
 import { BiCircle ,BiBox } from "react-icons/bi";
@@ -30,7 +29,7 @@ import Popuup from './Popuup';
 import firststreakanim from './streak1anim.json';
 import timeranim from './Timer.json'
 import streakanim2 from './streakanim2.json'
-import LearningStreak from './LearningStreak';
+
 
 
 
@@ -49,10 +48,18 @@ const Profile=()=> {
   const [showmodal ,setshowmodal] = useState(false);
   const [showpmodel,setshowpmodal] = useState(false);
   const [open,setisopen] = useState(false);
+  const [change,setchange]=useState(true);
  const[disabled ,setdisabled] = useState(false);
-  const {setgamestate,points,setpoints,unlock,tokens,settokens,showlevelup,energy,levelno,showbadge,setshowbadge,showpopup,setshowpopup,level} = useContext(Quizcontext);
+  const {setgamestate,points,setpoints,unlock,tokens,timeevent,settokens,showlevelup,energy,setenergy,levelno,showbadge,setshowbadge,showpopup,setshowpopup,level} = useContext(Quizcontext);
  
 let toastunlocked = false;
+
+const handleclick=()=>{
+  setpoints(points+100);
+  settokens(tokens+20);
+  setenergy(energy+50)
+  setchange(false);
+}
 
   const handleclose=()=>{
     setshowmodal(false);
@@ -92,7 +99,7 @@ const particlesLoaded = useCallback(async container => {
   
     
     
-<div className='main bg-gradient-to-r from-black to-slate-800 ... mb-5 '>
+<div className='main bg-gradient-to-r from-black to-slate-900 ... mb-5 '>
 
   <Popuup visible={showpopup}  handleclose={handleclose}/>
 
@@ -155,6 +162,8 @@ const particlesLoaded = useCallback(async container => {
 </div>
 
 {/* <LearningStreak/> */}
+
+
 <AnimatePresence>
 
 <Coinmodal visible={showmodal} handleclose = {handleclose} />
@@ -402,9 +411,22 @@ const particlesLoaded = useCallback(async container => {
     <li className='flex flex-row mb-7 '>
   <BsFillCaretRightFill  className='font-bold text-xl text-sky-300 mr-4' /><p className='text-l  text-slate-400 '>  Assigment on isochoric process</p><img src={diamond} alt='diam' className='w-5 h-5 absolute right-44'></img><h3 className='text-slate-400 diamondalign'>10</h3>
     </li>
-    <li className='flex flex-row mb-7 '>
+
+
+   {timeevent===false ? <div>
+     <li className='flex flex-row mb-7 '>
   <BsFillCaretRightFill  className='font-bold text-xl text-sky-300 mr-4' /><p className='text-l  text-slate-400 '>  Quiz on java</p><button className='text-yellow-500 left-96 tracking-widest px-10 tlealign'>TLE</button>
     </li>
+    </div>:<div>
+     <li className='flex flex-row mb-7 '>
+  <BsFillCaretRightFill  className='font-bold text-xl text-sky-300 mr-4' /><p className='text-l  text-slate-400 line-through '>  Quiz on java</p><p className='text-green-200 completedalign   px-10 '>Completed</p>
+    </li>
+    </div>
+
+} 
+   
+
+
     <li className='flex flex-row mb-7 '>
   <BsFillCaretRightFill  className='font-bold text-xl text-sky-300 mr-4' /><p className='text-l  text-slate-400 '>  Lesson on gibs energy change</p><img src={diamond} alt='diam' className='w-5 h-5 absolute right-44'></img><h3 className='text-slate-400 diamondalign'>10</h3><img src={ruby} alt='ruby' className='w-5 h-5 absolute right-32'></img>  <h3 className='text-slate-400 rubyalign'>20</h3>
     </li>
@@ -526,6 +548,7 @@ const particlesLoaded = useCallback(async container => {
   <div className='onlinelist relative'>
 
   <div className='relative timeevents'>
+{ timeevent===false ?
     <div className='flex flex-col justify-center items-center'>
 <h3 className='text-2xl text-yellow-400 relative top-3 font-semibold'>Time limited Event!!</h3>
 <Lottie animationData={timeranim} className='relative top-4' />
@@ -534,15 +557,42 @@ const particlesLoaded = useCallback(async container => {
 <h3 className='text-xl text-slate-300 relative font-medium top-10'>and earn<span className='text-red-500 ml-2  text-2xl relative font-semi-bold'>Extra </span> points !!! </h3>
 <div className='flex flex-row justify-start items-start '>
 <img src={diamond} className='h-7 w-7 relative top-16 -left-5'/>
-<h3 className='text-slate-300 relative top-16 -left-4 text-xl font-semibold '>X 50</h3>
+<h3 className='text-slate-300 relative top-16 -left-4 text-xl font-semibold '>X 100</h3>
 <img src={coin} className='h-7 w-7 relative top-16 left-1'/>
-<h3 className='text-slate-300 relative top-16 left-2 text-xl font-semibold '>X 50</h3>
+<h3 className='text-slate-300 relative top-16 left-2 text-xl font-semibold '>X 20</h3>
 <img src={lightning} className='h-7 w-7 relative top-16 left-5'/>
 <h3 className='text-slate-300 relative top-16 left-4 text-xl font-semibold '>X 50</h3>
-
 </div>
-<button className='button9 relative top-24 px-14 py-0.5 left-6'>Take Quiz</button>
+<button onClick={()=>setgamestate("Javastartquiz")} className='button9 relative top-24 px-14 py-0.5 left-6'>Take Quiz</button>
+  </div>:
+  
+  <div className='flex flex-col justify-center items-center'>
+
+<Lottie animationData={timeranim} className='relative top-4' loop={false} autoPlay={false} />
+<h3 className='relative text-green-300 font-bold tracking-wider text-2xl  top-4'>Event Complete</h3>
+
+
+<div className='flex flex-row justify-start items-start relative -top-7 '>
+<img src={diamond} className='h-7 w-7 relative top-16 -left-5'/>
+<h3 className='text-slate-300 relative top-16 -left-4 text-xl font-semibold '>X 100</h3>
+<img src={coin} className='h-7 w-7 relative top-16 left-1'/>
+<h3 className='text-slate-300 relative top-16 left-2 text-xl font-semibold '>X 20</h3>
+<img src={lightning} className='h-7 w-7 relative top-16 left-5'/>
+<h3 className='text-slate-300 relative top-16 left-4 text-xl font-semibold '>X 50</h3>
+</div>
+
+{ change === true ? <div>
+<button onClick={handleclick} className='button9 relative top-24 px-14 py-0.5 left-6'>Collect</button>
+</div>:
+
+<div className='text-2xl tracking-wider font-semibold text-slate-300 relative flex flex-col top-16'>
+  
+ <h3 className='relative left-4'>Rewards collected</h3>
+  <h3 className='text-sm relative  font-light text-slate-400 top-3'>Upcoming events will get updated!</h3></div>}
+
   </div>
+}
+
 </div>
 
 <div className='updates flex flex-col justify-start items-center'>
