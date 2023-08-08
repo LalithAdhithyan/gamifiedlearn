@@ -482,7 +482,7 @@ background-color: rgba(0, 0, 0, 0.639);
   width: 1100px;
   top: 270px;
   left: 350px;
-  background-color: rgba(0, 0, 0, 0.534);
+  background-color: rgb(0, 0, 0);
   border-radius: 15px;
   position: absolute;
 }
@@ -492,4 +492,46 @@ background-color: rgba(0, 0, 0, 0.639);
   left: 196px;
 }
 
+.carouseldiv{
+  position: relative;
+  height: 280px;
+  width:1000px;
+  border-radius: 12px;
+  top: 50px;
+  background-color: rgba(255, 255, 255, 0.045);
+}
 
+.carddiv{
+  position: relative;
+  height: 230px;
+  width: 300px;
+  background-color: rgba(25, 148, 255, 0.202);
+  border-radius: 12px;
+  top: 12px;
+  left: 10px;
+  margin-right: 20px;
+  border: dotted;
+}
+
+.missions{
+  position: relative;
+  width: 100%;
+  height: 160px;
+  top: 300px;
+  border-radius: 15px;
+}
+.faunpos{
+  position: absolute;
+  top: 165px;
+}
+
+.completedcarddiv{
+  position: relative;
+  height: 230px;
+  width: 300px;
+  background-color: black;
+  border-radius: 12px;
+  top: 12px;
+  left: 10px;
+  margin-right: 20px;
+}
