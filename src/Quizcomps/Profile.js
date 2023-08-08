@@ -50,6 +50,7 @@ const Profile=()=> {
   const [open,setisopen] = useState(false);
   const [change,setchange]=useState(true);
  const[disabled ,setdisabled] = useState(false);
+ const[showstreak,setshowstreak]=useState(false);
   const {setgamestate,points,setpoints,unlock,tokens,timeevent,settokens,showlevelup,energy,setenergy,levelno,showbadge,setshowbadge,showpopup,setshowpopup,level} = useContext(Quizcontext);
  
 let toastunlocked = false;
@@ -66,6 +67,7 @@ const handleclick=()=>{
     setshowpmodal(false);
     setshowbadge(false);
     setshowpopup(false);
+    setshowstreak(false);
   }
 
   const handletaskrewards=()=>{
@@ -160,11 +162,10 @@ const particlesLoaded = useCallback(async container => {
   </motion.div>
 
 </div>
+<AnimatePresence> <LearningStreak visible = {showstreak} handleclose = {handleclose}/></AnimatePresence>
 
-{/* <LearningStreak/> */}
 
-
-<AnimatePresence>
+<AnimatePresence >
 
 <Coinmodal visible={showmodal} handleclose = {handleclose} />
 
@@ -320,8 +321,8 @@ const particlesLoaded = useCallback(async container => {
     <div className='flex flex-col justify-center items-center'>
       <h3 className='text-2xl text-slate-400 tracking-wider relative top-2 font-medium'>Learning Streaks</h3>
       <Lottie animationData={firststreakanim} loop={true} className='relative top-6'/>
-      <Lottie animationData={streakanim2} loop={true} className='relative -top-11' />
-      <button className='button10 relative -top-20 px-10'>View Streak</button>
+      <Lottie animationData={streakanim2} loop={false} className='relative -top-11' />
+      <button onClick={()=>setshowstreak(true)} className='button10 relative -top-20 px-10'>View Streak</button>
 
     </div>
  {/* <span className='text-slate-400 flex justify-center text-xl top-3 absolute left-20'>
