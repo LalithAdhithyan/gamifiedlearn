@@ -2,13 +2,9 @@ import React, { useEffect, useState } from 'react'
 import './leaderboard.css';
 import { useContext } from 'react';
 import { Quizcontext } from '../Helpers/Quizcontext';
-import expprof from './images/otaku3.png'
 import Lottie from 'lottie-react';
 import backbg from './ldbganim.json'
 import ldbg from './ldboard.json'
-import gold from './images/goldmedal.png';
-import silver from './images/silvermedal.png';
-import bronze from './images/bronzemedal.png'
 import man from './images/Man.png';
 import prof2 from './images/otaku (1).png';
 import prof3 from './images/otaku3.png';

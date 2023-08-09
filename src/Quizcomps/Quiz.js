@@ -127,7 +127,7 @@ const setopfunc=(option)=>{
     <div className='text-white bg-black relative '>
 
 
-     <Lottie animationData={bga} loop={true} classID= 'relative w-10'/>
+     <Lottie animationData={bga} loop={true} className= 'relative  -top-96'/>
    
       <div className='quizdiv rounded-xl z-40  backdrop-blur-sm '>
       
@@ -150,7 +150,7 @@ const setopfunc=(option)=>{
        <button onClick={()=>setopfunc("C")} className='text-slate-300 relative top-40 left-32 optionbg    focus:bg-purple-700 focus:text-black  hover:text-purple-500  hover:bg-black option text-2xl font-semibold mr-16 cursor-pointer'>{Question[curques].optionC}</button>
        <button onClick={()=>setopfunc("D")} className='text-slate-300 relative top-40 left-32 optionbg    focus:bg-purple-700 focus:text-black  hover:text-purple-500  hover:bg-black option text-2xl font-semibold cursor-pointer'>{Question[curques].optionD}</button>
        </div>
-         { curques < Question.length-1 ?<button disabled={able} onClick={nextquestion} className='button ' >Next Question</button>:<button disabled={able} className='text-black text-xl font-semibold nxtbtn exitbutton'onClick={finishquiz}>Finishquiz</button>}
+         { curques < Question.length-1 ?<button disabled={able} onClick={nextquestion} className='button' >Next Question</button>:<button disabled={able} className='text-black text-xl font-semibold nxtbtn exitbutton'onClick={finishquiz}>Finishquiz</button>}
 
       </div>
 

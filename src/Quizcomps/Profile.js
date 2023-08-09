@@ -44,14 +44,12 @@ import streakanim2 from './streakanim2.json'
 const Profile=()=> {
 
  
-  const[isplaying,setisplaying] = useState(false);
+
   const [showmodal ,setshowmodal] = useState(false);
   const [showpmodel,setshowpmodal] = useState(false);
   const [open,setisopen] = useState(false);
-  const [change,setchange]=useState(true);
- const[disabled ,setdisabled] = useState(false);
- const[showstreak,setshowstreak]=useState(false);
-  const {setgamestate,points,setpoints,unlock,tokens,timeevent,settokens,showlevelup,energy,setenergy,levelno,showbadge,setshowbadge,showpopup,setshowpopup,level} = useContext(Quizcontext);
+  const[showstreak,setshowstreak]=useState(false);
+  const {setgamestate,change,setchange,points,setpoints,disabled,setdisabled,unlock,tokens,timeevent,settokens,showlevelup,energy,setenergy,levelno,showbadge,setshowbadge,showpopup,setshowpopup,level} = useContext(Quizcontext);
  
 let toastunlocked = false;
 
@@ -162,7 +160,7 @@ const particlesLoaded = useCallback(async container => {
   </motion.div>
 
 </div>
-<AnimatePresence> <LearningStreak visible = {showstreak} handleclose = {handleclose}/></AnimatePresence>
+  {showstreak &&<AnimatePresence> <LearningStreak handleclose = {handleclose}/></AnimatePresence>}
 
 
 <AnimatePresence >
@@ -396,10 +394,18 @@ const particlesLoaded = useCallback(async container => {
 {unlock===true ?
     <div className='flex flex-row'>
     <li className='flex flex-row mb-7 '>
-  <BsFillCaretRightFill  className='font-bold text-xl text-sky-300 mr-4' /><button  className='text-slate-400 cursor-pointer line-through'  onClick={()=>setgamestate("startquiz")}>  Quiz on Thermodynamics  </button><span className='text-green-300 relative left-4'>Completed</span><img src={diamond} alt='diam' className='w-5 h-5  absolute right-52'></img><h3 className='text-slate-400 diamondalignafter'>10</h3><img src={ruby} alt='ruby' className='w-5 h-5 absolute right-40'></img> <h3 className='text-slate-400 rubyalignafter'>20</h3>
+  <BsFillCaretRightFill  className='font-bold text-xl text-sky-300 mr-4' /><button  className='text-slate-400 cursor-pointer line-through'  onClick={()=>setgamestate("startquiz")}>  Quiz on Thermodynamics  </button><span className='text-green-300 relative left-4'>Completed</span>
+
+  {disabled===true ? <div>
+ <h3 className='text-slate-300 text-medium left-20 tracking-wider relative'>Rewards collected!</h3>
+
+  </div>:<div>
+  <img src={diamond} alt='diam' className='w-5 h-5  absolute right-52'></img><h3 className='text-slate-400 diamondalignafter'>10</h3><img src={ruby} alt='ruby' className='w-5 h-5 absolute right-40'></img> <h3 className='text-slate-400 rubyalignafter'>20</h3>
   <button onClick={handletaskrewards} disabled={disabled} className='text-slate-300 relative left-48 border-1 hover:bg-slate-50 px-3  rounded-lg hover:text-black border-sky-200'>Collect</button>
+  </div>}
+ 
     </li>
-    <button className='absolute'></button>
+
     </div>:
  <div>
     <li className='flex flex-row mb-7 '>
@@ -416,7 +422,7 @@ const particlesLoaded = useCallback(async container => {
 
    {timeevent===false ? <div>
      <li className='flex flex-row mb-7 '>
-  <BsFillCaretRightFill  className='font-bold text-xl text-sky-300 mr-4' /><p className='text-l  text-slate-400 '>  Quiz on java</p><button className='text-yellow-500 left-96 tracking-widest px-10 tlealign'>TLE</button>
+  <BsFillCaretRightFill  className='font-bold text-xl text-sky-300 mr-4' /><p className='text-l  text-slate-400 '>  Quiz on java</p><button onClick={()=>setgamestate("Javastartquiz")} className='text-yellow-500 left-96 tracking-widest px-10 tlealign'>TLE</button>
     </li>
     </div>:<div>
      <li className='flex flex-row mb-7 '>
