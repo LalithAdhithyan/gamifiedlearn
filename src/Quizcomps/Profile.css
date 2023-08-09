@@ -440,10 +440,12 @@ background-color: rgba(0, 0, 0, 0.639);
   position: absolute;
   left: 240px;
   border: 1px solid rgba(255, 191, 0, 0.508);
+  font-weight: 400;
+  border-radius: 12px;
 }
 
 .tlealign:hover{
-  background-color: rgba(255, 170, 0, 0.324);
+  background-color: rgba(255, 170, 0, 0.956);
   color: black;
   border-radius: 12px;
   border: 1px solid rgba(255, 179, 0, 0.183);

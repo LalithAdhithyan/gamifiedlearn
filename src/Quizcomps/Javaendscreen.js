@@ -12,7 +12,7 @@ const Javaendscreen = () => {
      const handletoastj=()=>{
  
    setgamestate("profile")
-   settimeevent("true")
+   settimeevent(true)
 
      }
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Mainmenu from './Mainmenu';
 import Quiz from './Quiz';
 import { useState } from 'react';
@@ -17,6 +17,7 @@ import Javarpage from './Javarpage';
 import Javatryagain from './Javatryagain';
 import Javadecision from './Javadecision';
 import Javaendscreen from './Javaendscreen';
+import LearningStreak from './LearningStreak';
 
 
 
@@ -35,13 +36,17 @@ function Quizhome() {
     const[showbadge ,setshowbadge]= useState(false);
     const [level,setlevel]=useState(60);
     const [levelno,setlevelno] = useState(80);
-    const [levelpoints,setlevelpoints] = useState(3);
     const [timeevent,settimeevent] = useState(false);
     const[showlevelup,setshowlevelup]= useState(false);
     const[complete,setcomplete]=useState(false);
+    const [change,setchange]=useState(true);
+    const[disabled ,setdisabled] = useState(false);
+    useEffect(() => {
+      console.log('new time event :: ', timeevent );
+    }, [ timeevent ])
   return (
     <div>
- <Quizcontext.Provider value={{complete,setcomplete,settimeevent,timeevent,gamestate,showlevelup,setshowlevelup,setgamestate,setscore,score,life,setlife,points,setpoints,tokens,settokens,energy,setenergy,unlock,setunlock,showbadge ,setshowbadge,showpopup,setshowpopup,level,setlevel,levelno,setlevelno}}>
+ <Quizcontext.Provider value={{complete,setcomplete,settimeevent,disabled,setdisabled,change,setchange,timeevent,gamestate,showlevelup,setshowlevelup,setgamestate,setscore,score,life,setlife,points,setpoints,tokens,settokens,energy,setenergy,unlock,setunlock,showbadge ,setshowbadge,showpopup,setshowpopup,level,setlevel,levelno,setlevelno}}>
   {gamestate==="quiz" && <Quiz/>}
   {gamestate==="mainmenu" && <Mainmenu/>}
   {gamestate==="animate" && <Rocketpage/>}
@@ -58,8 +63,7 @@ function Quizhome() {
   {gamestate==="Javarpage"&&<Javarpage/>}
   {gamestate==="Javatryagain"&&<Javatryagain/>}
   {gamestate==="Javadecision"&&<Javadecision/>}
-  
-
+  {gamestate==="learningstreak"&&<LearningStreak/>}
   </Quizcontext.Provider>
     </div>
   )

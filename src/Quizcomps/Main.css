@@ -171,7 +171,7 @@
   }
   
 .optionbg{
-background-color: black;
+background-color: rgba(128, 0, 128, 0.256);
 }
 
 .optionbg:focus-visible{
