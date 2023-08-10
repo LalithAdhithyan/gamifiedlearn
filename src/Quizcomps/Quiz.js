@@ -12,7 +12,7 @@ const Quiz = () => {
 
   const{score,setscore,setgamestate,life,setlife,points,setpoints,settokens,tokens,energy ,setenergy,setunlock} = useContext(Quizcontext);
   const [ curques,setcurques] = useState(0);
-  const[optionchose,setoptionchosen] = useState("");
+  const[optionchose,setoptionchosen] = useState("decision");
   const[timeremaining,settimeremaining] = useState(10);
   const[able,setable] = useState(true);
   const[progress,setprogress] =useState(0);

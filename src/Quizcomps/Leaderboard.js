@@ -16,8 +16,42 @@ import prof4 from './images/otaku4.png';
 import prof5 from './images/otaku5.png';
 import prof6 from './images/otaku6.png';
 import prof7 from './images/otaku7.png';
+import { useState } from 'react';
 const Leaderboard = () => {
   const {setgamestate} = useContext(Quizcontext);
+
+
+  const [isHovered, setIsHovered] = useState(null)
+  const handleMouseOver = (e) => {
+   switch (e.target.id) {
+       case "1":
+           setIsHovered(1)
+           break
+       case "2":
+           setIsHovered(2)
+           break
+      case "3":
+           setIsHovered(3)
+           break
+      case "4":
+           setIsHovered(4)
+           break
+      case "5":
+           setIsHovered(5)
+            break
+      case "6":
+           setIsHovered(6)
+           break   
+      case "7":
+           setIsHovered(7)
+           break  
+      case "8":
+           setIsHovered(8)
+           break
+   }
+}
+
+  
   return (
     <div className='h-screen bg-black flex flex-row z-40 '>
     <Lottie animationData={backbg} loop={true}  className='absolute '/>
@@ -104,28 +138,42 @@ const Leaderboard = () => {
         </div>
         <div className='updateboard flex flex-col'>
         <div className='text-slate-300 h-10 upmessage relative top-2 mb-1'>
-         <h3 className='text-slate-300 relative left-6 top-2  '>Joshua weissman earned 13 points <span className='absolute left-96 text-sm font-thin'>2 minutes ago</span></h3>
+         <h3 onMouseOver={handleMouseOver} id="1"  className='text-slate-300 relative left-6 top-2 cursor-pointer 'onMouseOut={() => setIsHovered(null)} >Joshua weissman earned 13 points <span className='absolute left-96 text-sm font-thin'>2 minutes ago</span></h3>
+         {isHovered&&<h2 className='  bg-yellow-400 text-black -top-6 rounded-md    bg-opacity-100 left-3 absolute'>{isHovered ===1 && "Joshua weissman completed Quiz "}</h2>}
+        
         </div>
         <div className='text-slate-300 h-10 upmessage relative top-2 mb-1'>
-         <h3 className='text-slate-300 relative left-6 top-2  '>Robert ash earned 20 points <span className='absolute left-96 text-sm font-thin'>4 minutes ago</span></h3>
+         <h3 onMouseOver={handleMouseOver} id="2" className='text-slate-300 relative left-6 top-2 cursor-pointer ' onMouseOut={() => setIsHovered(null)}>Robert ash earned 20 points <span className='absolute left-96 text-sm font-thin'>4 minutes ago</span></h3>
+         {isHovered&&<h2 className='  bg-yellow-400 text-black -top-6 rounded-md    bg-opacity-100 left-3 absolute'>{isHovered ===2 && " Robert ash completed Quiz "}</h2>}
         </div>
         <div className='text-slate-300 h-10 upmessage relative top-2 mb-1'>
-         <h3 className='text-slate-300 relative left-6 top-2  '>johana cruz earned 2 points <span className='absolute left-96 text-sm font-thin '>12 minutes ago</span></h3>
+         <h3 onMouseOver={handleMouseOver} id="3" className='text-slate-300 relative left-6 top-2 cursor-pointer 'onMouseOut={() => setIsHovered(null)}>johana cruz earned 2 points <span className='absolute left-96 text-sm font-thin '>12 minutes ago</span></h3>
+         {isHovered&&<h2 className='  bg-yellow-400 text-black -top-6 rounded-md    bg-opacity-100 left-3 absolute'>{isHovered ===3 && "johana cruz completed Quiz "}</h2>}
         </div>
         <div className='text-slate-300 h-10 upmessage relative top-2 mb-1'>
-         <h3 className='text-slate-300 relative left-6 top-2  '>catherin stark earned 10 points <span className='absolute left-96 text-sm font-thin'>35 minutes ago</span></h3>
+         <h3  onMouseOver={handleMouseOver} id="4" className='text-slate-300 relative left-6 top-2  'onMouseOut={() => setIsHovered(null)}>catherin stark earned 10 points <span className='absolute left-96 text-sm font-thin'>35 minutes ago</span></h3>
+         {isHovered&&<h2 className='  bg-yellow-400 text-black -top-6 rounded-md    bg-opacity-100 left-3 absolute'>{isHovered ===4 && "catherin completed Quiz "}</h2>}
+
         </div>
         <div className='text-slate-300 h-10 upmessage relative top-2 mb-1'>
-         <h3 className='text-slate-300 relative left-6 top-2  '>Jim carrey earned 5 points <span className='absolute left-96 text-sm font-thin'>a hour ago</span></h3>
+         <h3  onMouseOver={handleMouseOver} id="5" className='text-slate-300 relative left-6 top-2  'onMouseOut={() => setIsHovered(null)}>Jim carrey earned 5 points <span className='absolute left-96 text-sm font-thin'>a hour ago</span></h3>
+         {isHovered&&<h2 className='  bg-yellow-400 text-black -top-6 rounded-md    bg-opacity-100 left-3 absolute'>{isHovered ===5 && "Jim carrey completed Quiz "}</h2>}
+
         </div>
         <div className='text-slate-300 h-10 upmessage relative top-2 mb-1'>
-         <h3 className='text-slate-300 relative left-6 top-2  '>Voldemort earned 4 points <span className='absolute left-96 text-sm font-thin'>2 hours ago</span></h3>
+         <h3  onMouseOver={handleMouseOver} id="6"  className='text-slate-300 relative left-6 top-2  'onMouseOut={() => setIsHovered(null)}>Voldemort earned 4 points <span className='absolute left-96 text-sm font-thin'>2 hours ago</span></h3>
+         {isHovered&&<h2 className='  bg-yellow-400 text-black -top-6 rounded-md    bg-opacity-100 left-3 absolute'>{isHovered ===6 && "Voldemort completed Quiz "}</h2>}
+
         </div>
         <div className='text-slate-300 h-10 upmessage relative top-2 mb-1'>
-         <h3 className='text-slate-300 relative left-6 top-2  '>michael earned 2 points <span className='absolute left-96 text-sm font-thin'>4 hours ago</span></h3>
+         <h3 onMouseOver={handleMouseOver} id="7"  className='text-slate-300 relative left-6 top-2  'onMouseOut={() => setIsHovered(null)}>michael earned 2 points <span className='absolute left-96 text-sm font-thin'>4 hours ago</span></h3>
+         {isHovered&&<h2 className='  bg-yellow-400 text-black -top-6 rounded-md    bg-opacity-100 left-3 absolute'>{isHovered ===7 && "michael completed Quiz "}</h2>}
+
         </div>
         <div className='text-slate-300 h-10 upmessage relative top-2 mb-1'>
-         <h3 className='text-slate-300 relative left-6 top-2  '>Joshua Hunter earned 13 points <span className='absolute left-96 text-sm font-thin'>12 hours ago</span></h3>
+         <h3  onMouseOver={handleMouseOver} id="8" className='text-slate-300 relative left-6 top-2  'onMouseOut={() => setIsHovered(null)}>Joshua Hunter earned 13 points <span className='absolute left-96 text-sm font-thin'>12 hours ago</span></h3>
+         {isHovered&&<h2 className='  bg-yellow-400 text-black -top-6 rounded-md    bg-opacity-100 left-3 absolute'>{isHovered ===8 && "Joshua Hunter completed Quiz "}</h2>}
+
         </div>
         </div>
 

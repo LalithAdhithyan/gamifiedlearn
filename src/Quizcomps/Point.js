@@ -8,7 +8,7 @@ import coin from './images/coin.png'
 
 const Point = ({handleclose,visible}) => {
 
-    const {setnewgamestate}= useContext(Quizcontext);
+    const {setgamestate}= useContext(Quizcontext);
    
 
     const point = useRef(null);
@@ -74,7 +74,7 @@ const Point = ({handleclose,visible}) => {
     
             <div>
             <div className=' flex flex-row absolute top-20 left-24 '>
-            <h3 className='relative top-7 text-lg text-slate-400'onClick={()=>setnewgamestate("Newquiz")}> Complete the Quiz</h3>
+            <h3 className='relative top-7 text-lg text-slate-400 cursor-pointer'onClick={()=>setgamestate("newquiz")}> Complete the Quiz</h3>
             <motion.button onenter={onenter}  whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       transition={{ type: "spring", stiffness: 400, damping: 17 }} className='border-1 hover:bg-yellow  px-2 hover:text-slate-400 border-slate-100 absolute top-7 left-72 rounded-xl bg-slate-400 text-lg text-slate-100'>Collect</motion.button>

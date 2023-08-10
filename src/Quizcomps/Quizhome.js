@@ -10,6 +10,9 @@ import Newtryagain from './Newtryagain';
 import Newendscreen from './Newendscreen';
 import Profile from './Profile';
 import Leaderboard from './Leaderboard';
+import NewQuiz from './Newquiz';
+import NewStartquiz from './NewStartquiz';
+import NewMainmenu from './NewMainmenu';
 
 
 
@@ -17,6 +20,7 @@ import Leaderboard from './Leaderboard';
 function Quizhome() {
 
     const [gamestate,setgamestate] = useState("profile");
+    // const [newgamestate,setnewgamestate] = useState("profile");
     const [score,setscore] = useState(0);
     const [life,setlife]= useState(3);
     const [points,setpoints]=useState(257);
@@ -33,11 +37,16 @@ function Quizhome() {
   {gamestate==="mainmenu" && <Mainmenu/>}
   {gamestate==="animate" && <Rocketpage/>}
   {gamestate==="startquiz"&&<Startquiz/>}
-   {gamestate==="decision"&&<Decision/>}
-   {gamestate==="newtryagain" &&<Newtryagain/>}
+  {gamestate==="decision"&&<Decision/>}
+  {gamestate==="newtryagain" &&<Newtryagain/>}
   {gamestate=== "newendscreen"&&<Newendscreen/>}
   {gamestate==="profile"&&<Profile/>}
   {gamestate==="leaderboard"&&<Leaderboard/>}
+  {gamestate==="newquiz"&&<NewQuiz/>}
+  {gamestate==="newstartquiz"&&<NewStartquiz/>}
+  {gamestate==="newmainmenu"&&<NewMainmenu/>}
+
+
   </Quizcontext.Provider>
     </div>
   )

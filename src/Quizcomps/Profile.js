@@ -67,7 +67,7 @@ const Profile=()=> {
   const [point,setshowpoints] = useState(false);
 
 
-  const {setgamestate,points,setpoints,tokens,settokens,energy,setenergy,unlock,setunlock,showbadge,setshowbadge,showpopup,setshowpopup} = useContext(Quizcontext);
+  const {setgamestate,setnewgamestate,points,setpoints,tokens,settokens,energy,setenergy,unlock,setunlock,showbadge,setshowbadge,showpopup,setshowpopup} = useContext(Quizcontext);
  
 let toastunlocked = false;
 
