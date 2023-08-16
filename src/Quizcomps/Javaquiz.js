@@ -115,10 +115,10 @@ const setopfunc=(option)=>{
 
   return (
 
-    <div className='text-white bg-black relative '>
+    <div className='text-white bg-black relative  '>
 
 
-     <Lottie animationData={bga} loop={true} classID= 'relative w-10'/>
+     <Lottie animationData={bga} loop={true} className= 'relative -top-80 h-full w-full '/>
    
       <div className='quizdiv rounded-xl z-40  backdrop-blur-sm '>
       
